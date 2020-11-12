@@ -1,0 +1,11 @@
+# output dir
+output
+
+# idea
+.idea
+
+# maven
+*.iml
+
+# generated files
+target

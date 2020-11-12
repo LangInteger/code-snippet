@@ -1,0 +1,42 @@
+
+dependencies {
+    jooqRuntime('mysql:mysql-connector-java')
+}
+
+jooq {
+    version = '3.11.11'
+    edition = 'OSS'
+    sample(sourceSets.main) {
+        jdbc {
+            driver = 'com.mysql.jdbc.Driver'
+            url = 'jdbc:mysql://localhost:3306/jooq'
+            user = 'root'
+            password = ''
+            schema = 'jooq'
+        }
+        generator {
+            name = 'org.jooq.codegen.DefaultGenerator'
+            strategy {
+                name = 'org.jooq.codegen.DefaultGeneratorStrategy'
+            }
+            database {
+                name = 'org.jooq.meta.mysql.MySQLDatabase'
+                inputSchema = 'jooq'
+            }
+            generate {
+                daos = true
+                relations = true
+                deprecated = false
+                records = true
+                immutablePojos = true
+                fluentSetters = true
+                // ...
+            }
+            target {
+                packageName = 'test.generated'
+                directory = 'src/main/java'
+            }
+        }
+    }
+}
+

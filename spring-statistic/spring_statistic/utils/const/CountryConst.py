@@ -1,0 +1,1 @@
+COUNTRY_NAME_CN_CHINA = '中国'

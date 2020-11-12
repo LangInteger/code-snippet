@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: tmc-services
+  datasource:
+    url: jdbc:mysql://localhost:3307/test?characterEncoding=utf8&useSSL=true
+    username: root
+    password: root
+    useSSL: true
+    driver-class-name: com.mysql.jdbc.Driver
+  #    data: classpath:/sql/init20/table-modify.sql
+  jpa:
+    show-sql: true
+    generate-ddl: true # 如果要关闭DDL，改为false
+    hibernate:
+      ddl-auto: update # 把update改为 none，去掉ddl update，加快启动速度，如果修改了entity，改为update即可
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect  #不加这句则默认为myisam引擎
+
+server:
+  port: 10066
+  partnerId: 1

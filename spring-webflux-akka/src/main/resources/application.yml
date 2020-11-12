@@ -1,0 +1,11 @@
+logging:
+  level:
+    org.springframework.cloud.config: DEBUG
+    org.springframework.cloud.bootstrap: DEBUG
+    org.springframework: WARN
+    springfox.documentation: WARN
+    org.hibernate: WARN
+    io.netty: DEBUG
+    io.lettuce.core: DEBUG
+    com.zaxxer.hikari: DEBUG
+    com.langinteger: DEBUG
